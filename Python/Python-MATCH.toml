@@ -1,0 +1,9 @@
+[potential_absolute_path_in_glob]
+match="glob(:[arg])"
+rule="""
+where match :[arg] { 
+| '"/:[_]"' -> true
+| "'/:[_]'" -> true
+}
+"""
+  

@@ -1,0 +1,14 @@
+[glob_with_path_separator]
+match=":[indent~\\s+]:[line\\n]"
+rule="""
+where match :[line] { 
+  | glob(:[arg]) -> 
+    match :[arg] {
+      | "':[_]/:[_]'" -> true
+      | '":[_]/:[_]"' -> true
+  }
+}
+"""
+rewrite="""
+:[indent]# The next line calls `glob` and contains a quoted string that looks like it contains a hardcoded path separator `/`. Consider using os.path.join instead.
+:[indent]:[line]"""

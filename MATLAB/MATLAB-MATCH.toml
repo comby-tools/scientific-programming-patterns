@@ -1,0 +1,5 @@
+[potential_absolute_path_in_string_single_quote]
+match="'/...'"
+
+[potential_absolute_path_in_string_double_quote]
+match='"/..."'
