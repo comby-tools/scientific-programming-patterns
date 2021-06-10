@@ -2,8 +2,8 @@
 match="glob(:[arg])"
 rule="""
 where match :[arg] { 
-| '"/:[_]"' -> true
-| "'/:[_]'" -> true
+| '":[_]/:[_]"' -> true
+| "':[_]/:[_]'" -> true
 }
 """
   

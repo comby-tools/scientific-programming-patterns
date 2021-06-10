@@ -1,0 +1,12 @@
+[potential_absolute_path_in_string]
+match=":[line\\n]"
+rule="""
+where match :[line] { 
+  | "'/:[_]'" -> true 
+  | '"/:[_]"' -> true 
+  | _ -> false
+}
+"""
+rewrite="""
+:[line].file::[line].line It looks like this next line uses a harcoded absolute path in the string. Consider using a parameter or command line arg.
+:[line]"""

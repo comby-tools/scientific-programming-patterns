@@ -1,0 +1,9 @@
+[potential_absolute_path_in_glob]
+match="glob(:[arg])"
+rule="""
+where match :[arg] { 
+| '":[_]/:[_]"' -> true
+| "':[_]/:[_]'" -> true
+}
+"""
+rewrite=":[arg].file.name::[arg].line: PLATFORM SPECIFIC CODE. Call to `glob` that contains a quoted string that looks like it contains a hardcoded path separator `/`. This won't work on some platforms (e.g., Windows). Consider using os.path.join instead."

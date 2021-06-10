@@ -10,5 +10,5 @@ where match :[line] {
 }
 """
 rewrite="""
-:[indent]# The next line calls `glob` and contains a quoted string that looks like it contains a hardcoded path separator `/`. Consider using os.path.join instead.
+:[indent]# The next line calls `glob` and contains a quoted string that looks like it contains a hardcoded path separator `/`. This won't work on some platforms (e.g., Windows). Consider using os.path.join instead.
 :[indent]:[line]"""

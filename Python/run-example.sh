@@ -12,7 +12,14 @@ comby -config Python-MATCH.toml -f .py -lang .py -omega -stats
 
 echo
 echo "========================================================"
-echo "=========== Comby diff output with comment ============="
+echo "=========== Comby custom rewrite report output ========="
+echo "========================================================"
+echo
+comby -config Python-REPORT.toml -f .py -lang .py -omega -stats -stdout -newline-separated
+
+echo
+echo "========================================================"
+echo "=========== Comby diff output with inline comment ======"
 echo "========================================================"
 echo
 comby -config Python-REWRITE.toml -f .py -lang .py -omega -stats
