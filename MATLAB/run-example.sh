@@ -11,7 +11,7 @@ comby -config MATLAB-MATCH.toml -f .m -lang .generic -omega -stats
 echo "========================================================"
 echo "=========== Comby customized report output=============="
 echo "========================================================"
-comby -config MATLAB-MATCH.toml -f .m -lang .generic -omega -stats -stdout -newline-separated
+comby -config MATLAB-REPORT.toml -f .m -lang .generic -omega -stats -stdout -newline-separated
 
 echo
 echo "==============================================================="
